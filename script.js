@@ -108,7 +108,7 @@ function initGiftSystem() {
     const closeButtons = document.querySelectorAll('.close-modal');
     
     // Пароль (имя Риты в разных вариантах)
-    const correctPasswords = ['рита', 'Рита', 'РИТА', 'Rita', 'rita'];
+    const correctPasswords = ['2026newyear'];
     
     if (!giftBtn || !passwordModal) return;
     
