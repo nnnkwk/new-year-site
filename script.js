@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initStars();
     initCountdown();
     initMobileOptimization();
+    initGiftSystem(); // Новая функция для подарка
     
     console.log('С Новым 2026 Годом, Рита! 🎄');
 });
@@ -94,6 +95,173 @@ function updateCountdown() {
     if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
     if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
     if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
+}
+
+// Система подарка с паролем
+function initGiftSystem() {
+    const giftBtn = document.getElementById('open-gift-btn');
+    const passwordModal = document.getElementById('password-modal');
+    const imageModal = document.getElementById('image-modal');
+    const passwordInput = document.getElementById('password-input');
+    const submitBtn = document.getElementById('submit-password');
+    const passwordError = document.getElementById('password-error');
+    const closeButtons = document.querySelectorAll('.close-modal');
+    
+    // Пароль (имя Риты в разных вариантах)
+    const correctPasswords = ['рита', 'Рита', 'РИТА', 'Rita', 'rita'];
+    
+    if (!giftBtn || !passwordModal) return;
+    
+    // Открытие модального окна с паролем
+    giftBtn.addEventListener('click', function() {
+        // Анимация кнопки
+        giftBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Открываю...';
+        giftBtn.disabled = true;
+        
+        // Эффект встряски подарка
+        const giftBox = document.querySelector('.gift-box');
+        giftBox.style.animation = 'shake 0.5s ease';
+        
+        setTimeout(() => {
+            // Показываем модальное окно с паролем
+            passwordModal.classList.remove('hidden');
+            passwordInput.focus();
+            
+            // Возвращаем кнопку в исходное состояние
+            giftBtn.innerHTML = '<i class="fas fa-box-open"></i> Получить подарок';
+            giftBtn.disabled = false;
+            giftBox.style.animation = '';
+        }, 1000);
+    });
+    
+    // Проверка пароля
+    submitBtn.addEventListener('click', checkPassword);
+    
+    // Проверка пароля по нажатию Enter
+    passwordInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            checkPassword();
+        }
+    });
+    
+    function checkPassword() {
+        const enteredPassword = passwordInput.value.trim();
+        
+        // Проверяем пароль
+        if (correctPasswords.includes(enteredPassword)) {
+            // Правильный пароль
+            passwordError.classList.add('hidden');
+            passwordInput.value = '';
+            
+            // Закрываем окно с паролем
+            passwordModal.classList.add('hidden');
+            
+            // Показываем успешную анимацию
+            showSuccessAnimation();
+            
+            // Через 1 секунду показываем картинку
+            setTimeout(() => {
+                imageModal.classList.remove('hidden');
+            }, 1000);
+            
+        } else {
+            // Неправильный пароль
+            passwordError.classList.remove('hidden');
+            passwordInput.value = '';
+            passwordInput.focus();
+            
+            // Анимация ошибки
+            passwordInput.style.animation = 'shake 0.5s ease';
+            setTimeout(() => {
+                passwordInput.style.animation = '';
+            }, 500);
+            
+            // Вибрация на мобильных (если поддерживается)
+            if (navigator.vibrate) {
+                navigator.vibrate(200);
+            }
+        }
+    }
+    
+    // Закрытие модальных окон
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                passwordInput.value = '';
+                passwordError.classList.add('hidden');
+            }
+        });
+    });
+    
+    // Закрытие по клику вне модального окна
+    window.addEventListener('click', function(event) {
+        if (event.target === passwordModal) {
+            passwordModal.classList.add('hidden');
+            passwordInput.value = '';
+            passwordError.classList.add('hidden');
+        }
+        if (event.target === imageModal) {
+            imageModal.classList.add('hidden');
+        }
+    });
+    
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            passwordModal.classList.add('hidden');
+            imageModal.classList.add('hidden');
+            passwordInput.value = '';
+            passwordError.classList.add('hidden');
+        }
+    });
+}
+
+// Анимация успешного ввода пароля
+function showSuccessAnimation() {
+    const container = document.querySelector('.container');
+    
+    // Создаём летающие сердечки
+    for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.innerHTML = '💖';
+        heart.style.cssText = `
+            position: fixed;
+            font-size: ${Math.random() * 25 + 20}px;
+            z-index: 2000;
+            pointer-events: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        `;
+        
+        container.appendChild(heart);
+        
+        // Анимация разлёта
+        const angle = (i / 20) * Math.PI * 2;
+        const distance = 100 + Math.random() * 100;
+        const targetX = Math.cos(angle) * distance;
+        const targetY = Math.sin(angle) * distance;
+        
+        heart.animate([
+            { 
+                transform: 'translate(-50%, -50%) scale(0)',
+                opacity: 1 
+            },
+            { 
+                transform: `translate(calc(-50% + ${targetX}px), calc(-50% + ${targetY}px)) scale(1)`,
+                opacity: 0 
+            }
+        ], {
+            duration: 1500,
+            easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            delay: Math.random() * 300
+        });
+        
+        // Удаление
+        setTimeout(() => heart.remove(), 1800);
+    }
 }
 
 // Оптимизация для мобильных
