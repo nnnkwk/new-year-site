@@ -3,114 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>С Новым Годом, Рита! 💖</title>
+    <title>С Новым 2025 Годом! 🎄</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Bad+Script&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&family=Bad+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .heart-decoration {
-            position: absolute;
-            color: #ff4081;
-            font-size: 20px;
-            animation: float 4s infinite ease-in-out;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <div class="snowflakes" aria-hidden="true"></div>
-        <div class="hearts" id="hearts-container"></div>
+        <div class="snowflakes" aria-hidden="true">
+            <!-- Снежинки будут добавлены через JavaScript -->
+        </div>
         
         <header>
-            <h1><i class="fas fa-heart"></i> С Новым Годом, Рита! <i class="fas fa-heart"></i></h1>
-            <p class="subtitle">Самая прекрасная девушка во Вселенной! ✨</p>
-            <div class="personal-message">
-                <p>Это поздравление создано специально для тебя!</p>
-            </div>
+            <h1><i class="fas fa-tree"></i> С Новым 2025 Годом! <i class="fas fa-tree"></i></h1>
+            <p class="subtitle">Пусть этот год принесет счастье, здоровье и удачу!</p>
         </header>
         
         <main>
             <div class="greeting-card">
                 <div class="card-content">
                     <div class="left-side">
-                        <div class="heart-tree">
-                            <div class="ht-top"><i class="fas fa-heart"></i></div>
-                            <div class="ht-middle">
-                                <i class="fas fa-heart"></i>
-                                <i class="fas fa-heart"></i>
+                        <div class="christmas-tree">
+                            <div class="tree-top"></div>
+                            <div class="tree-middle"></div>
+                            <div class="tree-bottom"></div>
+                            <div class="trunk"></div>
+                            <div class="decorations">
+                                <span class="decoration red"></span>
+                                <span class="decoration blue"></span>
+                                <span class="decoration yellow"></span>
+                                <span class="decoration gold"></span>
                             </div>
-                            <div class="ht-bottom">
-                                <i class="fas fa-heart"></i>
-                                <i class="fas fa-heart"></i>
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <div class="ht-trunk"></div>
-                            <div class="ht-star"><i class="fas fa-gem"></i></div>
+                            <div class="star"><i class="fas fa-star"></i></div>
                         </div>
                     </div>
                     
                     <div class="right-side">
-                        <h2>Дорогая Рита! 💝</h2>
-                        <p>В этот волшебный новогодний вечер хочу пожелать тебе невероятного счастья, которое будет светить в твоих глазах каждый день!</p>
-                        <p>Пусть 2025 год принесет тебе:</p>
-                        <ul class="wishes-list">
-                            <li><i class="fas fa-star"></i> Исполнение самых заветных желаний</li>
-                            <li><i class="fas fa-star"></i> Вдохновение для новых свершений</li>
-                            <li><i class="fas fa-star"></i> Крепкое здоровье и энергию</li>
-                            <li><i class="fas fa-star"></i> Любовь, которая согревает сердце</li>
-                            <li><i class="fas fa-star"></i> Удачу во всех начинаниях</li>
-                        </ul>
-                        <p>Пусть каждый твой день будет наполнен радостью, улыбками и маленькими чудесами! Ты заслуживаешь всего самого лучшего! 🌟</p>
+                        <h2>Дорогие друзья!</h2>
+                        <p>Пусть в новом году сбудутся все ваши мечты, а каждый день будет наполнен радостью, теплом и волшебством!</p>
+                        <p>Желаю крепкого здоровья, душевного спокойствия, профессиональных успехов и ярких впечатлений!</p>
+                        <p>Пусть ваш дом будет полон смеха, любви и гармонии!</p>
                         
-                        <div class="special-message">
-                            <p><i class="fas fa-quote-left"></i> Рита, ты — самое красивое чудо в моей жизни! <i class="fas fa-quote-right"></i></p>
+                        <div class="signature">
+                            <p>С наилучшими пожеланиями,</p>
+                            <p class="name">[Ваше Имя]</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="features">
-                <div class="feature pink">
-                    <i class="fas fa-crown"></i>
-                    <h3>Королева</h3>
-                    <p>Оставайся всегда королевой — красивой, уверенной, сияющей!</p>
+                <div class="feature">
+                    <i class="fas fa-gift"></i>
+                    <h3>Подарки</h3>
+                    <p>Пусть под ёлкой вас ждут самые желанные подарки!</p>
                 </div>
-                <div class="feature pink">
-                    <i class="fas fa-magic"></i>
+                <div class="feature">
+                    <i class="fas fa-snowflake"></i>
                     <h3>Волшебство</h3>
-                    <p>Пусть магия Нового года исполнит все твои мечты!</p>
+                    <p>Пусть новогоднее волшебство коснётся каждого!</p>
                 </div>
-                <div class="feature pink">
-                    <i class="fas fa-laugh-beam"></i>
-                    <h3>Счастье</h3>
-                    <p>Пусть счастье будет твоим верным спутником весь год!</p>
-                </div>
-            </div>
-            
-            <div class="rita-section">
-                <h3><i class="fas fa-heart-circle-check"></i> Почему 2025 будет особенным для Риты:</h3>
-                <div class="rita-reasons">
-                    <div class="reason">
-                        <div class="reason-icon">💫</div>
-                        <p>Потому что ты встретишь его с улыбкой</p>
-                    </div>
-                    <div class="reason">
-                        <div class="reason-icon">🎯</div>
-                        <p>Потому что все цели будут достигнуты</p>
-                    </div>
-                    <div class="reason">
-                        <div class="reason-icon">🌹</div>
-                        <p>Потому что ты достойна самого лучшего</p>
-                    </div>
+                <div class="feature">
+                    <i class="fas fa-heart"></i>
+                    <h3>Любовь</h3>
+                    <p>Пусть любовь и тепло согревают ваши сердца!</p>
                 </div>
             </div>
             
             <div class="countdown">
-                <h3>До Нового 2025 года осталось:</h3>
+                <h3>До Нового 2026 года осталось:</h3>
                 <div id="countdown-timer">
                     <div class="time-unit">
                         <span id="days">0</span>
@@ -129,26 +90,18 @@
                         <p>секунд</p>
                     </div>
                 </div>
-                <p class="countdown-message">С каждой секундой ближе к нашему волшебному году! 💖</p>
-            </div>
-            
-            <div class="interactive-section">
-                <h3>Загадай желание под волшебную ёлочку!</h3>
-                <button id="make-wish-btn"><i class="fas fa-hand-sparkles"></i> Загадать желание</button>
-                <div id="wish-result" class="hidden">
-                    <p>✨ Твое желание обязательно сбудется в 2025 году! ✨</p>
-                </div>
             </div>
         </main>
         
         <footer>
-            <div class="footer-heart">
-                <i class="fas fa-heartbeat"></i>
-            </div>
-            <p>Создано с безграничной нежностью и любовью 💗</p>
-            <p class="final-message">Рита, пусть этот сайт напомнит тебе, какая ты особенная!</p>
+            <p>Создано с <i class="fas fa-heart" style="color: #e74c3c;"></i> для вас</p>
+            <p class="github-link">
+                <i class="fab fa-github"></i> 
+                <a href="https://github.com/ваш-логин/newyear-greeting" target="_blank">Исходный код на GitHub</a>
+            </p>
             <div class="social">
-                <button onclick="shareForRita()"><i class="fas fa-heart"></i> Отправить Рите</button>
+                <p>Поделитесь праздником:</p>
+                <button onclick="shareOnSocial()"><i class="fas fa-share-alt"></i> Поделиться</button>
             </div>
         </footer>
     </div>

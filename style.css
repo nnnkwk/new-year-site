@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: 'Cormorant Garamond', serif;
-    background: linear-gradient(135deg, #2c003e, #6a0dad, #ff4081);
+    font-family: 'Bad Script', cursive;
+    background: linear-gradient(135deg, #0c2461, #1e3799, #4a69bd);
     color: #fff;
     min-height: 100vh;
     overflow-x: hidden;
@@ -38,45 +38,34 @@ header {
 }
 
 h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 4.5rem;
-    color: #ffccd5;
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 3.5rem;
+    color: #f6d365;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .subtitle {
-    font-size: 2rem;
-    color: #ffcc00;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.personal-message {
-    background: rgba(255, 255, 255, 0.1);
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 50px;
-    margin-top: 20px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    color: #a5d6a7;
 }
 
 /* Поздравительная открытка */
 .greeting-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    padding: 40px;
-    margin: 50px 0;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 40px 0;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     animation: slideUp 1s ease-out;
 }
 
 .card-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px;
     align-items: center;
 }
 
@@ -85,120 +74,91 @@ h1 {
     min-width: 300px;
 }
 
-/* Ёлка из сердечек */
-.heart-tree {
+/* Ёлка */
+.christmas-tree {
     position: relative;
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 350px;
     margin: 0 auto;
 }
 
-.ht-top, .ht-middle, .ht-bottom {
+.tree-top, .tree-middle, .tree-bottom {
     position: absolute;
-    text-align: center;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    left: 50px;
 }
 
-.ht-top {
-    color: #ff4081;
-    font-size: 60px;
-    top: 50px;
-    left: 120px;
-    animation: pulse 2s infinite;
+.tree-top {
+    border-bottom: 100px solid #2e7d32;
+    top: 0;
 }
 
-.ht-middle {
-    top: 130px;
-    left: 90px;
+.tree-middle {
+    border-bottom: 120px solid #388e3c;
+    top: 80px;
 }
 
-.ht-middle i {
-    color: #e91e63;
-    font-size: 50px;
-    margin: 0 20px;
-    animation: pulse 2s infinite 0.5s;
+.tree-bottom {
+    border-bottom: 140px solid #43a047;
+    top: 180px;
 }
 
-.ht-bottom {
-    top: 210px;
-    left: 60px;
-}
-
-.ht-bottom i {
-    color: #c2185b;
-    font-size: 45px;
-    margin: 0 15px;
-    animation: pulse 2s infinite 1s;
-}
-
-.ht-trunk {
+.trunk {
     position: absolute;
-    width: 30px;
-    height: 60px;
+    width: 40px;
+    height: 50px;
     background: #8d6e63;
     bottom: 0;
-    left: 135px;
-    border-radius: 10px;
+    left: 110px;
 }
 
-.ht-star {
+.star {
     position: absolute;
-    top: 20px;
-    left: 145px;
-    color: #ffd700;
-    font-size: 40px;
-    animation: spin 4s infinite linear;
+    top: -25px;
+    left: 115px;
+    color: gold;
+    font-size: 50px;
+    text-shadow: 0 0 10px yellow;
+    animation: twinkle 2s infinite alternate;
 }
+
+.decoration {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.decoration.red { background: #e74c3c; top: 50px; left: 100px; }
+.decoration.blue { background: #3498db; top: 120px; left: 180px; }
+.decoration.yellow { background: #f1c40f; top: 200px; left: 70px; }
+.decoration.gold { background: #ffd700; top: 250px; left: 160px; }
 
 /* Текст поздравления */
 .right-side h2 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3.5rem;
-    color: #ffccd5;
-    margin-bottom: 25px;
-    text-align: center;
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 2.5rem;
+    color: #f6d365;
+    margin-bottom: 20px;
 }
 
 .right-side p {
-    font-size: 1.5rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: #f8bbd9;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #e0f7fa;
 }
 
-.wishes-list {
-    list-style: none;
-    margin: 25px 0;
+.signature {
+    margin-top: 30px;
+    text-align: right;
 }
 
-.wishes-list li {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-    padding-left: 30px;
-    position: relative;
-    color: #ffe0e6;
-}
-
-.wishes-list li i {
-    color: #ffcc00;
-    position: absolute;
-    left: 0;
-    top: 5px;
-}
-
-.special-message {
-    background: rgba(255, 64, 129, 0.2);
-    border-left: 4px solid #ff4081;
-    padding: 20px;
-    margin: 30px 0;
-    border-radius: 10px;
-    font-style: italic;
-    font-size: 1.6rem;
-    text-align: center;
-}
-
-.special-message i {
-    color: #ff4081;
-    margin: 0 10px;
+.signature .name {
+    font-size: 1.8rem;
+    color: #f6d365;
+    font-weight: bold;
 }
 
 /* Особенности */
@@ -207,236 +167,115 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    margin: 60px 0;
-}
-
-.feature.pink {
-    background: rgba(255, 64, 129, 0.25);
-    border: 2px solid rgba(255, 64, 129, 0.4);
+    margin: 50px 0;
 }
 
 .feature {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 30px;
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    border-radius: 15px;
     text-align: center;
     flex: 1;
     min-width: 250px;
-    transition: all 0.4s;
-}
-
-.feature:hover {
-    transform: translateY(-15px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(255, 64, 129, 0.4);
-}
-
-.feature i {
-    font-size: 3.5rem;
-    color: #ffccd5;
-    margin-bottom: 20px;
-}
-
-.feature h3 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-    color: #ffcc00;
-    font-family: 'Dancing Script', cursive;
-}
-
-/* Секция для Риты */
-.rita-section {
-    background: linear-gradient(45deg, rgba(255, 64, 129, 0.2), rgba(156, 39, 176, 0.2));
-    padding: 40px;
-    border-radius: 25px;
-    margin: 50px 0;
-    text-align: center;
-}
-
-.rita-section h3 {
-    font-size: 2.5rem;
-    color: #ffccd5;
-    margin-bottom: 40px;
-    font-family: 'Dancing Script', cursive;
-}
-
-.rita-reasons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-}
-
-.reason {
-    flex: 1;
-    min-width: 200px;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
     transition: transform 0.3s;
 }
 
-.reason:hover {
-    transform: scale(1.1);
+.feature:hover {
+    transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.2);
 }
 
-.reason-icon {
+.feature i {
     font-size: 3rem;
+    color: #f6d365;
     margin-bottom: 15px;
 }
 
-.reason p {
-    font-size: 1.4rem;
-    color: #ffe0e6;
+.feature h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #a5d6a7;
 }
 
 /* Таймер обратного отсчета */
 .countdown {
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 25px;
-    margin: 50px 0;
-    border: 2px solid rgba(255, 204, 213, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 40px 0;
 }
 
 .countdown h3 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #ffccd5;
-    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #f6d365;
 }
 
 #countdown-timer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 20px;
 }
 
 .time-unit {
-    background: rgba(255, 64, 129, 0.3);
-    padding: 25px;
-    border-radius: 15px;
-    min-width: 140px;
-    border: 2px solid rgba(255, 204, 213, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 120px;
 }
 
 .time-unit span {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: bold;
-    color: #ffcc00;
+    color: #f6d365;
     display: block;
-    text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
 }
 
 .time-unit p {
-    font-size: 1.4rem;
-    margin-top: 15px;
-    color: #ffccd5;
-    font-weight: bold;
-}
-
-.countdown-message {
-    font-size: 1.6rem;
-    color: #ffcc00;
-    margin-top: 30px;
-    font-style: italic;
-}
-
-/* Интерактивная секция */
-.interactive-section {
-    text-align: center;
-    padding: 40px;
-    margin: 50px 0;
-}
-
-.interactive-section h3 {
-    font-size: 2.2rem;
-    color: #ffccd5;
-    margin-bottom: 30px;
-    font-family: 'Dancing Script', cursive;
-}
-
-#make-wish-btn {
-    background: linear-gradient(45deg, #ff4081, #ffcc00);
-    color: white;
-    border: none;
-    padding: 18px 35px;
-    border-radius: 50px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-#make-wish-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(255, 64, 129, 0.6);
-}
-
-#wish-result {
-    font-size: 2rem;
-    color: #ffcc00;
-    margin-top: 30px;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    animation: fadeIn 1s;
-}
-
-.hidden {
-    display: none;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #bbdefb;
 }
 
 /* Футер */
 footer {
     text-align: center;
-    padding: 50px 20px;
-    margin-top: 60px;
-    border-top: 2px solid rgba(255, 204, 213, 0.3);
-    position: relative;
+    padding: 30px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.footer-heart {
-    font-size: 4rem;
-    color: #ff4081;
-    margin-bottom: 20px;
-    animation: heartbeat 1.5s infinite;
+.github-link {
+    margin: 20px 0;
 }
 
-footer p {
-    font-size: 1.5rem;
-    margin: 15px 0;
-    color: #ffe0e6;
+.github-link a {
+    color: #f6d365;
+    text-decoration: none;
+    font-size: 1.2rem;
 }
 
-.final-message {
-    font-size: 2rem !important;
-    color: #ffcc00 !important;
-    font-weight: bold;
-    margin: 30px 0 !important;
+.github-link a:hover {
+    text-decoration: underline;
 }
 
 .social button {
-    background: linear-gradient(45deg, #ff4081, #e91e63);
+    background: linear-gradient(45deg, #e74c3c, #f39c12);
     color: white;
     border: none;
-    padding: 18px 40px;
+    padding: 12px 25px;
     border-radius: 50px;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: bold;
-    margin-top: 30px;
+    font-family: 'Bad Script', cursive;
 }
 
 .social button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.6);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
 }
 
 /* Анимации */
@@ -450,28 +289,16 @@ footer p {
     to { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+@keyframes twinkle {
+    from { transform: scale(1); opacity: 0.8; }
+    to { transform: scale(1.2); opacity: 1; }
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    h1 { font-size: 3rem; }
-    .subtitle { font-size: 1.5rem; }
+    h1 { font-size: 2.5rem; }
+    .subtitle { font-size: 1.2rem; }
     .card-content { flex-direction: column; }
-    .time-unit { min-width: 120px; }
-    .time-unit span { font-size: 3rem; }
-    .right-side h2 { font-size: 2.5rem; }
-    .special-message { font-size: 1.3rem; }
+    .time-unit { min-width: 100px; }
+    .time-unit span { font-size: 2.5rem; }
 }

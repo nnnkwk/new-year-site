@@ -1,30 +1,21 @@
 // Создание снежинок
 function createSnowflakes() {
     const snowflakesContainer = document.querySelector('.snowflakes');
-    const snowflakeCount = 80;
+    const snowflakeCount = 100;
     
     for (let i = 0; i < snowflakeCount; i++) {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
         
-        const size = Math.random() * 8 + 4;
+        // Случайные размеры и позиции
+        const size = Math.random() * 10 + 5;
         const startPosition = Math.random() * 100;
-        const animationDuration = Math.random() * 8 + 8;
-        const animationDelay = Math.random() * 5;
-        const opacity = Math.random() * 0.6 + 0.4;
-        const isHeart = Math.random() > 0.7;
+        const animationDuration = Math.random() * 10 + 10;
+        const animationDelay = Math.random() * 10;
+        const opacity = Math.random() * 0.7 + 0.3;
         
-        if (isHeart) {
-            snowflake.innerHTML = '❤️';
-            snowflake.style.fontSize = `${size * 2}px`;
-            snowflake.style.background = 'transparent';
-        } else {
-            snowflake.style.width = `${size}px`;
-            snowflake.style.height = `${size}px`;
-            snowflake.style.background = 'white';
-            snowflake.style.borderRadius = '50%';
-        }
-        
+        snowflake.style.width = `${size}px`;
+        snowflake.style.height = `${size}px`;
         snowflake.style.left = `${startPosition}vw`;
         snowflake.style.opacity = opacity;
         snowflake.style.animation = `fall ${animationDuration}s linear ${animationDelay}s infinite`;
@@ -32,6 +23,7 @@ function createSnowflakes() {
         snowflakesContainer.appendChild(snowflake);
     }
     
+    // Добавляем CSS анимацию для снежинок
     const style = document.createElement('style');
     style.textContent = `
         @keyframes fall {
@@ -44,35 +36,6 @@ function createSnowflakes() {
         }
     `;
     document.head.appendChild(style);
-}
-
-// Создание плавающих сердечек
-function createHearts() {
-    const heartsContainer = document.getElementById('hearts-container');
-    if (!heartsContainer) return;
-    
-    const heartCount = 30;
-    
-    for (let i = 0; i < heartCount; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('heart-decoration');
-        heart.innerHTML = '❤️';
-        
-        const size = Math.random() * 25 + 20;
-        const left = Math.random() * 100;
-        const top = Math.random() * 100;
-        const duration = Math.random() * 6 + 4;
-        const delay = Math.random() * 5;
-        
-        heart.style.fontSize = `${size}px`;
-        heart.style.left = `${left}vw`;
-        heart.style.top = `${top}vh`;
-        heart.style.animationDuration = `${duration}s`;
-        heart.style.animationDelay = `${delay}s`;
-        heart.style.opacity = Math.random() * 0.5 + 0.3;
-        
-        heartsContainer.appendChild(heart);
-    }
 }
 
 // Обратный отсчет до Нового года
@@ -93,251 +56,71 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 }
 
-// Функция для отправки Рите
-function shareForRita() {
-    const messages = [
-        "Рита, смотри какое красивое поздравление я для тебя сделал! 💖",
-        "Для самой прекрасной Риты - особое новогоднее поздравление! ✨",
-        "Дорогая Рита, этот сайт создан специально для тебя! 🎄",
-        "С Новым Годом, моя прекрасная Рита! 💝"
-    ];
-    
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    
+// Функция для поделиться
+function shareOnSocial() {
     if (navigator.share) {
         navigator.share({
-            title: 'С Новым Годом, Рита! 💖',
-            text: randomMessage,
+            title: 'С Новым 2025 Годом!',
+            text: 'Посмотрите это красивое новогоднее поздравление!',
             url: window.location.href
         })
         .then(() => console.log('Успешно поделились'))
-        .catch(error => console.log('Ошибка:', error));
+        .catch(error => console.log('Ошибка при шаринге:', error));
     } else {
-        const shareText = `${randomMessage}\n\n${window.location.href}`;
-        navigator.clipboard.writeText(shareText)
-            .then(() => {
-                alert('Сообщение для Риты скопировано в буфер обмена!\nОтправь его ей в сообщении! 💌');
-            })
-            .catch(err => {
-                prompt('Скопируйте эту ссылку и отправьте Рите:', window.location.href);
-            });
+        // Для десктопов - копируем ссылку в буфер обмена
+        navigator.clipboard.writeText(window.location.href)
+            .then(() => alert('Ссылка скопирована в буфер обмена! Поделитесь ею с друзьями!'))
+            .catch(err => console.error('Ошибка копирования: ', err));
     }
 }
 
-// Загадать желание
-function setupWishButton() {
-    const wishBtn = document.getElementById('make-wish-btn');
-    const wishResult = document.getElementById('wish-result');
-    
-    if (!wishBtn || !wishResult) return;
-    
-    const wishMessages = [
-        "✨ Твое желание обязательно сбудется! Ведь ты этого достойна! ✨",
-        "🌟 Вселенная услышала твое желание! Готовься к чуду в 2025! 🌟",
-        "💫 Загаданное желание Риты — это закон! Оно непременно исполнится! 💫",
-        "🎯 В 2025 году ты получишь даже больше, чем загадала! Верь в это! 🎯",
-        "🌠 Пусть все твои мечты сбудутся, самая прекрасная Рита! 🌠"
-    ];
-    
-    wishBtn.addEventListener('click', function() {
-        // Анимация кнопки
-        wishBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Загадываем...';
-        wishBtn.disabled = true;
-        
-        // Создаем эффект волшебной пыли
-        createMagicDust();
-        
-        // Показываем результат через 2 секунды
-        setTimeout(() => {
-            const randomMessage = wishMessages[Math.floor(Math.random() * wishMessages.length)];
-            wishResult.innerHTML = `<p>${randomMessage}</p>`;
-            wishResult.classList.remove('hidden');
-            
-            // Возвращаем кнопку в исходное состояние
-            wishBtn.innerHTML = '<i class="fas fa-hand-sparkles"></i> Загадать еще одно желание';
-            wishBtn.disabled = false;
-            
-            // Добавляем сердечки
-            createCelebrationHearts();
-        }, 2000);
+// Анимация для украшений на ёлке
+function animateDecorations() {
+    const decorations = document.querySelectorAll('.decoration');
+    decorations.forEach((decoration, index) => {
+        decoration.style.animation = `pulse ${2 + index * 0.5}s infinite alternate`;
     });
-}
-
-// Создать волшебную пыль
-function createMagicDust() {
-    const container = document.querySelector('.container');
     
-    for (let i = 0; i < 20; i++) {
-        const sparkle = document.createElement('div');
-        sparkle.style.position = 'absolute';
-        sparkle.style.width = '10px';
-        sparkle.style.height = '10px';
-        sparkle.style.background = 'radial-gradient(circle, #ffcc00, #ff4081)';
-        sparkle.style.borderRadius = '50%';
-        sparkle.style.zIndex = '1000';
-        
-        const startX = Math.random() * window.innerWidth;
-        const startY = window.innerHeight - 100;
-        
-        sparkle.style.left = `${startX}px`;
-        sparkle.style.top = `${startY}px`;
-        
-        container.appendChild(sparkle);
-        
-        // Анимация
-        sparkle.animate([
-            { transform: `translate(0, 0) scale(1)`, opacity: 1 },
-            { transform: `translate(${Math.random() * 100 - 50}px, -200px) scale(0)`, opacity: 0 }
-        ], {
-            duration: 1500,
-            easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
-        });
-        
-        // Удаляем после анимации
-        setTimeout(() => sparkle.remove(), 1500);
-    }
-}
-
-// Создать праздничные сердечки
-function createCelebrationHearts() {
-    const container = document.querySelector('.container');
-    
-    for (let i = 0; i < 15; i++) {
-        const heart = document.createElement('div');
-        heart.innerHTML = '❤️';
-        heart.style.position = 'absolute';
-        heart.style.fontSize = `${Math.random() * 30 + 20}px`;
-        heart.style.zIndex = '1000';
-        heart.style.opacity = '0.9';
-        
-        const startX = 50 + Math.random() * 20 - 10;
-        const startY = 50 + Math.random() * 20 - 10;
-        
-        heart.style.left = `${startX}%`;
-        heart.style.top = `${startY}%`;
-        
-        container.appendChild(heart);
-        
-        // Анимация
-        heart.animate([
-            { transform: 'scale(0) translate(0, 0)', opacity: 0 },
-            { transform: 'scale(1.5) translate(0, -50px)', opacity: 1 },
-            { transform: 'scale(1) translate(0, -100px)', opacity: 0.5 }
-        ], {
-            duration: 2000,
-            easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-        });
-        
-        // Удаляем после анимации
-        setTimeout(() => heart.remove(), 2000);
-    }
-}
-
-// Случайные комплименты при клике на имя
-function setupCompliments() {
-    const ritaName = document.querySelector('h1');
-    if (!ritaName) return;
-    
-    const compliments = [
-        "Рита, ты просто космос! 🌟",
-        "Ты прекраснее самого красивого рассвета! 🌅",
-        "Твоя улыбка делает мир лучше! 😊",
-        "С тобой каждый день как праздник! 🎉",
-        "Ты вдохновляешь на подвиги! 💪",
-        "Твои глаза как две звезды! ✨",
-        "Ты самая добрая и нежная! 💖",
-        "С Новым Годом, моя принцесса! 👑"
-    ];
-    
-    ritaName.addEventListener('click', function() {
-        const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
-        
-        // Создаем всплывающее сообщение
-        const popup = document.createElement('div');
-        popup.textContent = randomCompliment;
-        popup.style.position = 'fixed';
-        popup.style.top = '50%';
-        popup.style.left = '50%';
-        popup.style.transform = 'translate(-50%, -50%)';
-        popup.style.background = 'rgba(255, 64, 129, 0.9)';
-        popup.style.color = 'white';
-        popup.style.padding = '20px 40px';
-        popup.style.borderRadius = '20px';
-        popup.style.fontSize = '2rem';
-        popup.style.zIndex = '2000';
-        popup.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
-        popup.style.textAlign = 'center';
-        
-        document.body.appendChild(popup);
-        
-        // Удаляем через 2 секунды
-        setTimeout(() => {
-            popup.remove();
-        }, 2000);
-    });
+    // Добавляем CSS анимацию пульсации
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.3); }
+        }
+    `;
+    document.head.appendChild(style);
 }
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     createSnowflakes();
-    createHearts();
     updateCountdown();
-    setupWishButton();
-    setupCompliments();
+    animateDecorations();
     
     // Обновляем таймер каждую секунду
     setInterval(updateCountdown, 1000);
     
-    // Параллакс эффект
+    // Добавляем эффект параллакса для снежинок при скролле
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const snowflakes = document.querySelector('.snowflakes');
-        if (snowflakes) {
-            snowflakes.style.transform = `translateY(${scrolled * 0.3}px)`;
-        }
+        snowflakes.style.transform = `translateY(${scrolled * 0.5}px)`;
     });
     
-    // Автоматическое изменение фона
-    let hue = 0;
-    setInterval(() => {
-        hue = (hue + 0.1) % 360;
-        document.body.style.background = 
-            `linear-gradient(135deg, hsl(${hue}, 100%, 15%), hsl(${(hue + 30) % 360}, 100%, 35%), hsl(${(hue + 60) % 360}, 100%, 50%))`;
-    }, 5000);
-    
-    // Секретное сообщение при тройном клике
-    let clickCount = 0;
-    let clickTimer;
-    
-    document.body.addEventListener('click', function() {
-        clickCount++;
-        
-        if (clickTimer) clearTimeout(clickTimer);
-        
-        clickTimer = setTimeout(() => {
-            if (clickCount === 3) {
-                showSecretMessage();
-            }
-            clickCount = 0;
-        }, 500);
-    });
-});
-
-// Секретное сообщение
-function showSecretMessage() {
-    const secretMessages = [
-        "Рита, ты самое лучшее, что случалось в моей жизни! 💝",
-        "Каждый день с тобой — это подарок судьбы! 🎁",
-        "Ты заслуживаешь всего самого прекрасного в этом мире! 🌍",
-        "Пусть 2025 год будет твоим годом! Полным любви и счастья! 🥂"
+    // Случайные пожелания при клике на ёлку
+    const tree = document.querySelector('.christmas-tree');
+    const wishes = [
+        "Счастья в новом году!",
+        "Здоровья и удачи!",
+        "Исполнения всех желаний!",
+        "Мира и добра!",
+        "Процветания и успехов!",
+        "Любви и тепла!"
     ];
     
-    const message = secretMessages[Math.floor(Math.random() * secretMessages.length)];
-    
-    const modal = document.createElement('div');
-    modal.style.position = 'fixed';
-    modal.style.top = '0';
-    modal.style.left = '0';
-    modal.style.width = '100%';
-    modal.style.height = '100%';
-    modal.style.background = 'rgba(0,0,0,0.8)';
+    tree.addEventListener('click', function() {
+        const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+        alert(randomWish);
+    });
+});
