@@ -1,0 +1,477 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background: linear-gradient(135deg, #2c003e, #6a0dad, #ff4081);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Снежинки */
+.snowflake {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+/* Шапка */
+header {
+    text-align: center;
+    padding: 30px 0;
+    animation: fadeIn 1.5s ease-out;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem;
+    color: #ffccd5;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.personal-message {
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-size: 1.3rem;
+}
+
+/* Поздравительная открытка */
+.greeting-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 40px;
+    margin: 50px 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: slideUp 1s ease-out;
+}
+
+.card-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+}
+
+.left-side, .right-side {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Ёлка из сердечек */
+.heart-tree {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.ht-top, .ht-middle, .ht-bottom {
+    position: absolute;
+    text-align: center;
+}
+
+.ht-top {
+    color: #ff4081;
+    font-size: 60px;
+    top: 50px;
+    left: 120px;
+    animation: pulse 2s infinite;
+}
+
+.ht-middle {
+    top: 130px;
+    left: 90px;
+}
+
+.ht-middle i {
+    color: #e91e63;
+    font-size: 50px;
+    margin: 0 20px;
+    animation: pulse 2s infinite 0.5s;
+}
+
+.ht-bottom {
+    top: 210px;
+    left: 60px;
+}
+
+.ht-bottom i {
+    color: #c2185b;
+    font-size: 45px;
+    margin: 0 15px;
+    animation: pulse 2s infinite 1s;
+}
+
+.ht-trunk {
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    background: #8d6e63;
+    bottom: 0;
+    left: 135px;
+    border-radius: 10px;
+}
+
+.ht-star {
+    position: absolute;
+    top: 20px;
+    left: 145px;
+    color: #ffd700;
+    font-size: 40px;
+    animation: spin 4s infinite linear;
+}
+
+/* Текст поздравления */
+.right-side h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #ffccd5;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.right-side p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #f8bbd9;
+}
+
+.wishes-list {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.wishes-list li {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    color: #ffe0e6;
+}
+
+.wishes-list li i {
+    color: #ffcc00;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.special-message {
+    background: rgba(255, 64, 129, 0.2);
+    border-left: 4px solid #ff4081;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 10px;
+    font-style: italic;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.special-message i {
+    color: #ff4081;
+    margin: 0 10px;
+}
+
+/* Особенности */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.feature.pink {
+    background: rgba(255, 64, 129, 0.25);
+    border: 2px solid rgba(255, 64, 129, 0.4);
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    transition: all 0.4s;
+}
+
+.feature:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(255, 64, 129, 0.4);
+}
+
+.feature i {
+    font-size: 3.5rem;
+    color: #ffccd5;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #ffcc00;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Секция для Риты */
+.rita-section {
+    background: linear-gradient(45deg, rgba(255, 64, 129, 0.2), rgba(156, 39, 176, 0.2));
+    padding: 40px;
+    border-radius: 25px;
+    margin: 50px 0;
+    text-align: center;
+}
+
+.rita-section h3 {
+    font-size: 2.5rem;
+    color: #ffccd5;
+    margin-bottom: 40px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.rita-reasons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.reason {
+    flex: 1;
+    min-width: 200px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    transition: transform 0.3s;
+}
+
+.reason:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.reason-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.reason p {
+    font-size: 1.4rem;
+    color: #ffe0e6;
+}
+
+/* Таймер обратного отсчета */
+.countdown {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 25px;
+    margin: 50px 0;
+    border: 2px solid rgba(255, 204, 213, 0.3);
+}
+
+.countdown h3 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ffccd5;
+    font-family: 'Dancing Script', cursive;
+}
+
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.time-unit {
+    background: rgba(255, 64, 129, 0.3);
+    padding: 25px;
+    border-radius: 15px;
+    min-width: 140px;
+    border: 2px solid rgba(255, 204, 213, 0.5);
+}
+
+.time-unit span {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffcc00;
+    display: block;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+.time-unit p {
+    font-size: 1.4rem;
+    margin-top: 15px;
+    color: #ffccd5;
+    font-weight: bold;
+}
+
+.countdown-message {
+    font-size: 1.6rem;
+    color: #ffcc00;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+/* Интерактивная секция */
+.interactive-section {
+    text-align: center;
+    padding: 40px;
+    margin: 50px 0;
+}
+
+.interactive-section h3 {
+    font-size: 2.2rem;
+    color: #ffccd5;
+    margin-bottom: 30px;
+    font-family: 'Dancing Script', cursive;
+}
+
+#make-wish-btn {
+    background: linear-gradient(45deg, #ff4081, #ffcc00);
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+#make-wish-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(255, 64, 129, 0.6);
+}
+
+#wish-result {
+    font-size: 2rem;
+    color: #ffcc00;
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    animation: fadeIn 1s;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 60px;
+    border-top: 2px solid rgba(255, 204, 213, 0.3);
+    position: relative;
+}
+
+.footer-heart {
+    font-size: 4rem;
+    color: #ff4081;
+    margin-bottom: 20px;
+    animation: heartbeat 1.5s infinite;
+}
+
+footer p {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #ffe0e6;
+}
+
+.final-message {
+    font-size: 2rem !important;
+    color: #ffcc00 !important;
+    font-weight: bold;
+    margin: 30px 0 !important;
+}
+
+.social button {
+    background: linear-gradient(45deg, #ff4081, #e91e63);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.social button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.6);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    .subtitle { font-size: 1.5rem; }
+    .card-content { flex-direction: column; }
+    .time-unit { min-width: 120px; }
+    .time-unit span { font-size: 3rem; }
+    .right-side h2 { font-size: 2.5rem; }
+    .special-message { font-size: 1.3rem; }
+}
