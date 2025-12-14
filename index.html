@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>С Новым Годом, Рита! ✨</title>
+    <title>С Новым 2026 Годом, Рита! ✨</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marck+Script&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,13 +27,36 @@
         <!-- Фоновые элементы -->
         <div class="snowflakes" aria-hidden="true"></div>
         <div class="floating-stars" id="stars-container"></div>
-        <div class="sparkles" id="sparkles-container"></div>
         
+        <!-- Обратный отсчёт в самом верху -->
+        <section class="countdown-top">
+            <h3><i class="fas fa-clock"></i> До Нового 2026 года осталось:</h3>
+            <div class="countdown-timer">
+                <div class="time-block">
+                    <span id="days">0</span>
+                    <p>дней</p>
+                </div>
+                <div class="time-block">
+                    <span id="hours">0</span>
+                    <p>часов</p>
+                </div>
+                <div class="time-block">
+                    <span id="minutes">0</span>
+                    <p>минут</p>
+                </div>
+                <div class="time-block">
+                    <span id="seconds">0</span>
+                    <p>секунд</p>
+                </div>
+            </div>
+            <p class="countdown-note">Каждая секунда приближает нас к новым чудесам 🌙</p>
+        </section>
+
         <!-- Главное поздравление -->
         <header class="main-header">
             <div class="header-content">
-                <h1><i class="fas fa-star"></i> С Новым Годом, Рита! <i class="fas fa-star"></i></h1>
-                <p class="subtitle">Пусть 2025 год будет полон волшебства и тепла ✨</p>
+                <h1><i class="fas fa-star"></i> С Новым 2026 Годом, Рита! <i class="fas fa-star"></i></h1>
+                <p class="subtitle">Пусть этот год будет полон волшебства и тепла ✨</p>
             </div>
         </header>
 
@@ -82,20 +105,14 @@
                             <p>С любовью и наилучшими пожеланиями,</p>
                             <p class="signature-name">Тот, кто верит в твоё счастье</p>
                         </div>
-                        <div class="date">31 декабря 2024</div>
                     </div>
                 </div>
             </div>
 
             <!-- Волшебные моменты для Риты -->
             <div class="moments-section">
-                <h3><i class="fas fa-magic"></i> Пусть в 2025 году тебя ждут:</h3>
+                <h3><i class="fas fa-magic"></i> Пусть в 2026 году тебя ждут:</h3>
                 <div class="moments-grid">
-                    <div class="moment">
-                        <div class="moment-icon">❄️</div>
-                        <h4>Уютные вечера</h4>
-                        <p>Тёплые пледы, горячий чай и хорошие книги</p>
-                    </div>
                     <div class="moment">
                         <div class="moment-icon">🌟</div>
                         <h4>Яркие открытия</h4>
@@ -106,42 +123,12 @@
                         <h4>Искренние эмоции</h4>
                         <p>Настоящая радость, любовь и душевный покой</p>
                     </div>
-                </div>
-            </div>
-
-            <!-- Интерактивное пожелание -->
-            <div class="wish-section">
-                <h3><i class="fas fa-gift"></i> Загадай желание под новогоднюю звезду</h3>
-                <button id="wish-btn" class="wish-button">
-                    <i class="fas fa-star"></i> Загадать желание
-                </button>
-                <div id="wish-message" class="wish-message hidden">
-                    <p>✨ Твоё желание услышано! Пусть оно сбудется в 2025 году! ✨</p>
-                </div>
-            </div>
-
-            <!-- Обратный отсчёт -->
-            <div class="countdown-section">
-                <h3><i class="fas fa-clock"></i> До Нового 2025 года осталось:</h3>
-                <div class="countdown-timer">
-                    <div class="time-block">
-                        <span id="days">0</span>
-                        <p>дней</p>
-                    </div>
-                    <div class="time-block">
-                        <span id="hours">0</span>
-                        <p>часов</p>
-                    </div>
-                    <div class="time-block">
-                        <span id="minutes">0</span>
-                        <p>минут</p>
-                    </div>
-                    <div class="time-block">
-                        <span id="seconds">0</span>
-                        <p>секунд</p>
+                    <div class="moment">
+                        <div class="moment-icon">✨</div>
+                        <h4>Волшебные встречи</h4>
+                        <p>Знакомства, которые меняют жизнь к лучшему</p>
                     </div>
                 </div>
-                <p class="countdown-note">Каждая секунда приближает нас к новым чудесам 🌙</p>
             </div>
 
             <!-- Персональное послание -->
@@ -160,15 +147,7 @@
                     <i class="fas fa-heart"></i>
                 </div>
                 <p class="footer-message">Это поздравление создано специально для тебя, Рита</p>
-                <div class="footer-actions">
-                    <button onclick="shareForRita()" class="share-btn">
-                        <i class="fas fa-share-alt"></i> Отправить Рите
-                    </button>
-                    <button onclick="createFireworks()" class="fireworks-btn">
-                        <i class="fas fa-fire"></i> Запустить фейерверк
-                    </button>
-                </div>
-                <p class="footer-note">С наилучшими пожеланиями на Новый 2025 год! 🎇</p>
+                <p class="footer-note">С наилучшими пожеланиями на Новый 2026 год! 🎇</p>
             </div>
         </footer>
     </div>
