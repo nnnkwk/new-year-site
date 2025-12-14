@@ -11,14 +11,14 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
-    line-height: 1.7; /* Увеличена высота строки для лучшей читаемости */
-    font-size: 18px; /* Увеличен базовый размер шрифта */
+    line-height: 1.7;
+    font-size: 18px;
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 25px; /* Увеличен padding */
+    padding: 25px;
     position: relative;
     z-index: 1;
 }
@@ -26,23 +26,24 @@ body {
 /* Обратный отсчёт вверху */
 .countdown-top {
     text-align: center;
-    margin: 25px auto 50px; /* Увеличены отступы */
-    padding: 30px; /* Увеличен padding */
+    margin: 25px auto 50px;
+    padding: 30px;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 18px; /* Увеличен радиус */
+    border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Увеличен shadow */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 .countdown-top h3 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem); /* Увеличены размеры */
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
     color: #ffd166;
-    margin-bottom: 30px; /* Увеличен отступ */
+    margin-bottom: 30px;
+    font-weight: 600; /* Полужирный */
 }
 
 .countdown-top h3 i {
-    margin-right: 12px; /* Увеличен отступ */
+    margin-right: 12px;
     animation: gentlePulse 2s infinite alternate;
 }
 
@@ -50,15 +51,15 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px; /* Увеличен gap */
-    margin-bottom: 25px; /* Увеличен отступ */
+    gap: 20px;
+    margin-bottom: 25px;
 }
 
 .time-block {
     background: rgba(255, 255, 255, 0.08);
-    padding: 25px 20px; /* Увеличен padding */
-    border-radius: 15px; /* Увеличен радиус */
-    min-width: 140px; /* Увеличена минимальная ширина */
+    padding: 25px 20px;
+    border-radius: 15px;
+    min-width: 140px;
     border: 2px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
@@ -70,31 +71,31 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px; /* Увеличенная высота */
+    height: 4px;
     background: linear-gradient(90deg, #ff6b8b, #a5b4fc);
 }
 
 .time-block span {
-    font-size: 3.8rem; /* Увеличен размер цифр */
+    font-size: 3.8rem;
     font-weight: 700;
     color: #ffd166;
     display: block;
-    text-shadow: 0 0 15px rgba(255, 209, 102, 0.6); /* Увеличен shadow */
+    text-shadow: 0 0 15px rgba(255, 209, 102, 0.6);
     line-height: 1;
 }
 
 .time-block p {
-    font-size: 1.2rem; /* Увеличен размер текста */
+    font-size: 1.2rem;
     color: #a5b4fc;
-    margin-top: 12px; /* Увеличен отступ */
+    margin-top: 12px;
     font-weight: 500;
 }
 
 .countdown-note {
-    font-size: 1.3rem; /* Увеличен размер */
+    font-size: 1.3rem;
     color: #a5b4fc;
-    font-style: italic;
-    margin-top: 20px; /* Увеличен отступ */
+    margin-top: 20px;
+    font-weight: 500; /* Полужирный вместо курсива */
 }
 
 /* Фоновые элементы */
@@ -115,8 +116,8 @@ body {
 /* Шапка */
 .main-header {
     text-align: center;
-    padding: 40px 25px; /* Увеличен padding */
-    margin-bottom: 30px; /* Увеличен отступ */
+    padding: 40px 25px;
+    margin-bottom: 30px;
     position: relative;
 }
 
@@ -127,25 +128,26 @@ body {
 
 h1 {
     font-family: 'Marck Script', cursive;
-    font-size: clamp(3rem, 7vw, 5rem); /* Увеличены размеры */
+    font-size: clamp(3rem, 7vw, 5rem);
     color: #ffd166;
-    margin-bottom: 25px; /* Увеличен отступ */
-    text-shadow: 0 0 25px rgba(255, 209, 102, 0.4); /* Увеличен shadow */
+    margin-bottom: 25px;
+    text-shadow: 0 0 25px rgba(255, 209, 102, 0.4);
     line-height: 1.2;
+    font-weight: 700; /* Полужирный */
 }
 
 h1 i {
-    margin: 0 20px; /* Увеличен отступ */
-    font-size: 1.2em; /* Увеличен размер иконок */
+    margin: 0 20px;
+    font-size: 1.2em;
     animation: gentlePulse 2s infinite alternate;
 }
 
 .subtitle {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.4rem, 3.5vw, 2rem); /* Увеличены размеры */
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
     color: #a5b4fc;
-    font-weight: 500;
-    letter-spacing: 1.2px; /* Увеличен tracking */
+    font-weight: 600; /* Полужирный */
+    letter-spacing: 1.2px;
     line-height: 1.4;
 }
 
@@ -154,19 +156,19 @@ h1 i {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 40px auto; /* Увеличен отступ */
-    max-width: 700px; /* Увеличенная ширина */
+    margin: 40px auto;
+    max-width: 700px;
 }
 
 .line {
     flex: 1;
-    height: 3px; /* Увеличенная высота */
+    height: 3px;
     background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
 }
 
 .ornament {
-    margin: 0 40px; /* Увеличен отступ */
-    font-size: 3.5rem; /* Увеличен размер */
+    margin: 0 40px;
+    font-size: 3.5rem;
     color: #ff6b8b;
     animation: heartBeat 1.5s infinite;
 }
@@ -183,18 +185,18 @@ h1 i {
 
 /* Письмо */
 .letter-container {
-    max-width: 850px; /* Увеличенная ширина */
-    margin: 0 auto 60px; /* Увеличен отступ */
+    max-width: 850px;
+    margin: 0 auto 60px;
     position: relative;
 }
 
 .letter {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    border-radius: 25px; /* Увеличен радиус */
-    padding: 50px; /* Увеличен padding */
-    border: 2px solid rgba(255, 255, 255, 0.15); /* Увеличен border */
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); /* Увеличен shadow */
+    border-radius: 25px;
+    padding: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -205,27 +207,27 @@ h1 i {
     top: 0;
     left: 0;
     right: 0;
-    height: 6px; /* Увеличенная высота */
+    height: 6px;
     background: linear-gradient(90deg, #ff6b8b, #a5b4fc, #4cc9f0);
 }
 
 .letter-header {
     text-align: center;
-    margin-bottom: 50px; /* Увеличен отступ */
+    margin-bottom: 50px;
 }
 
 .wax-seal {
-    width: 100px; /* Увеличен размер */
-    height: 100px; /* Увеличен размер */
+    width: 100px;
+    height: 100px;
     background: radial-gradient(circle, #ff6b8b, #d43f8d);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 25px; /* Увеличен отступ */
-    font-size: 3.5rem; /* Увеличен размер */
+    margin: 0 auto 25px;
+    font-size: 3.5rem;
     color: white;
-    box-shadow: 0 0 25px rgba(255, 107, 139, 0.6); /* Увеличен shadow */
+    box-shadow: 0 0 25px rgba(255, 107, 139, 0.6);
     animation: sealRotate 10s infinite linear;
 }
 
@@ -236,40 +238,41 @@ h1 i {
 
 .letter-header h2 {
     font-family: 'Marck Script', cursive;
-    font-size: 3.2rem; /* Увеличен размер */
+    font-size: 3.2rem;
     color: #ffd166;
-    margin-bottom: 15px; /* Увеличен отступ */
+    margin-bottom: 15px;
+    font-weight: 700; /* Полужирный */
 }
 
 .letter-content {
-    font-size: 1.5rem; /* Увеличен размер шрифта */
-    line-height: 1.9; /* Увеличен line-height */
-    margin-bottom: 50px; /* Увеличен отступ */
+    font-size: 1.5rem;
+    line-height: 1.9;
+    margin-bottom: 50px;
 }
 
 .letter-paragraph {
-    margin-bottom: 30px; /* Увеличен отступ */
+    margin-bottom: 30px;
     text-align: justify;
-    color: #f0f0f0; /* Более светлый цвет для лучшей читаемости */
-    font-weight: 500;
-    font-size: 1.5rem; /* Увеличен размер шрифта */
+    color: #f0f0f0;
+    font-weight: 500; /* Полужирный */
+    font-size: 1.5rem;
 }
 
 .letter-paragraph.highlight {
     background: linear-gradient(45deg, rgba(255, 107, 139, 0.15), rgba(165, 180, 252, 0.15));
-    padding: 25px; /* Увеличен padding */
-    border-radius: 12px; /* Увеличен радиус */
-    border-left: 5px solid #a5b4fc; /* Увеличен border */
-    font-style: italic;
-    font-size: 1.6rem; /* Увеличен размер шрифта */
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #a5b4fc;
+    font-weight: 600; /* Полужирный вместо курсива */
+    font-size: 1.6rem;
 }
 
 .letter-paragraph.signature-line {
-    font-size: 1.8rem; /* Увеличен размер шрифта */
+    font-size: 1.8rem;
     color: #ffd166;
     text-align: center;
-    font-weight: 600;
-    margin-top: 50px; /* Увеличен отступ */
+    font-weight: 700; /* Более жирный */
+    margin-top: 50px;
     line-height: 1.8;
 }
 
@@ -277,9 +280,9 @@ h1 i {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: 50px; /* Увеличен отступ */
-    padding-top: 40px; /* Увеличен padding */
-    border-top: 2px solid rgba(255, 255, 255, 0.15); /* Увеличен border */
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .signature {
@@ -289,50 +292,52 @@ h1 i {
 
 .signature p {
     color: #a5b4fc;
-    font-size: 1.3rem; /* Увеличен размер шрифта */
-    margin-bottom: 8px; /* Увеличен отступ */
+    font-size: 1.3rem;
+    margin-bottom: 8px;
     line-height: 1.6;
+    font-weight: 500; /* Полужирный */
 }
 
 .signature-name {
     font-family: 'Marck Script', cursive;
-    font-size: 2.2rem !important; /* Увеличен размер шрифта */
+    font-size: 2.2rem !important;
     color: #ffd166 !important;
-    font-weight: 600;
-    margin-top: 15px; /* Увеличен отступ */
+    font-weight: 700; /* Полужирный */
+    margin-top: 15px;
 }
 
 /* Волшебные моменты */
 .moments-section {
-    max-width: 950px; /* Увеличенная ширина */
-    margin: 60px auto; /* Увеличен отступ */
+    max-width: 950px;
+    margin: 60px auto;
     text-align: center;
 }
 
 .moments-section h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.4rem; /* Увеличен размер */
+    font-size: 2.4rem;
     color: #ffd166;
-    margin-bottom: 50px; /* Увеличен отступ */
+    margin-bottom: 50px;
+    font-weight: 600; /* Полужирный */
 }
 
 .moments-section h3 i {
-    margin-right: 20px; /* Увеличен отступ */
-    font-size: 1.3em; /* Увеличен размер иконки */
+    margin-right: 20px;
+    font-size: 1.3em;
     animation: gentlePulse 2s infinite alternate;
 }
 
 .moments-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Увеличен minmax */
-    gap: 35px; /* Увеличен gap */
-    margin-top: 40px; /* Увеличен отступ */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
 }
 
 .moment {
     background: rgba(255, 255, 255, 0.05);
-    padding: 35px; /* Увеличен padding */
-    border-radius: 18px; /* Увеличен радиус */
+    padding: 35px;
+    border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     position: relative;
@@ -345,81 +350,83 @@ h1 i {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px; /* Увеличенная высота */
+    height: 4px;
     background: linear-gradient(90deg, #ff6b8b, #a5b4fc);
 }
 
 .moment:hover {
-    transform: translateY(-12px); /* Увеличенное смещение */
+    transform: translateY(-12px);
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); /* Увеличен shadow */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .moment-icon {
-    font-size: 4rem; /* Увеличен размер */
-    margin-bottom: 25px; /* Увеличен отступ */
+    font-size: 4rem;
+    margin-bottom: 25px;
 }
 
 .moment h4 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.9rem; /* Увеличен размер */
+    font-size: 1.9rem;
     color: #ffd166;
-    margin-bottom: 20px; /* Увеличен отступ */
+    margin-bottom: 20px;
     line-height: 1.4;
+    font-weight: 600; /* Полужирный */
 }
 
 .moment p {
-    color: #c0c0c0; /* Более светлый цвет */
-    font-size: 1.3rem; /* Увеличен размер */
+    color: #c0c0c0;
+    font-size: 1.3rem;
     line-height: 1.6;
+    font-weight: 500; /* Полужирный */
 }
 
 /* Персональное послание */
 .personal-note {
-    max-width: 800px; /* Увеличенная ширина */
-    margin: 70px auto; /* Увеличен отступ */
+    max-width: 800px;
+    margin: 70px auto;
     text-align: center;
 }
 
 .note-content {
     background: rgba(255, 255, 255, 0.05);
-    padding: 50px; /* Увеличен padding */
-    border-radius: 25px; /* Увеличен радиус */
-    border: 2px solid rgba(255, 255, 255, 0.15); /* Увеличен border */
+    padding: 50px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
     position: relative;
 }
 
 .note-content i {
     color: #ff6b8b;
-    font-size: 2.8rem; /* Увеличен размер */
-    margin: 0 20px; /* Увеличен отступ */
+    font-size: 2.8rem;
+    margin: 0 20px;
 }
 
 .note-content p {
-    font-size: 1.8rem; /* Увеличен размер */
+    font-size: 1.8rem;
     color: #ffd166;
-    font-style: italic;
-    line-height: 1.8; /* Увеличен line-height */
-    margin: 30px 0; /* Увеличен отступ */
+    line-height: 1.8;
+    margin: 30px 0;
+    font-weight: 600; /* Полужирный вместо курсива */
 }
 
 /* Футер */
 footer {
-    margin-top: 80px; /* Увеличен отступ */
-    padding: 50px 25px; /* Увеличен padding */
+    margin-top: 80px;
+    padding: 50px 25px;
     text-align: center;
-    border-top: 2px solid rgba(255, 255, 255, 0.15); /* Увеличен border */
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-content {
-    max-width: 700px; /* Увеличенная ширина */
+    max-width: 700px;
     margin: 0 auto;
 }
 
 .footer-heart {
-    font-size: 4.5rem; /* Увеличен размер */
+    font-size: 4.5rem;
     color: #ff6b8b;
-    margin-bottom: 30px; /* Увеличен отступ */
+    margin-bottom: 30px;
     animation: heartbeat 1.5s infinite;
 }
 
@@ -429,17 +436,19 @@ footer {
 }
 
 .footer-message {
-    font-size: 1.6rem; /* Увеличен размер */
+    font-size: 1.6rem;
     color: #a5b4fc;
-    margin-bottom: 25px; /* Увеличен отступ */
+    margin-bottom: 25px;
     line-height: 1.6;
+    font-weight: 500; /* Полужирный */
 }
 
 .footer-note {
-    font-size: 1.4rem; /* Увеличен размер */
+    font-size: 1.4rem;
     color: #999;
-    margin-top: 25px; /* Увеличен отступ */
+    margin-top: 25px;
     line-height: 1.6;
+    font-weight: 500; /* Полужирный */
 }
 
 /* Анимации */
@@ -448,10 +457,10 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Мобильная адаптация с увеличенными шрифтами */
+/* Мобильная адаптация */
 @media (max-width: 768px) {
     body {
-        font-size: 19px; /* Ещё больше на мобильных */
+        font-size: 19px;
         line-height: 1.8;
     }
     
@@ -470,7 +479,7 @@ footer {
     }
     
     .time-block span {
-        font-size: 3.2rem; /* Сохраняем увеличенный размер */
+        font-size: 3.2rem;
     }
     
     .time-block p {
@@ -550,7 +559,7 @@ footer {
 
 @media (max-width: 480px) {
     body {
-        font-size: 20px; /* Максимальный размер на маленьких экранах */
+        font-size: 20px;
     }
     
     .letter-paragraph {
