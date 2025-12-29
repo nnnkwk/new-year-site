@@ -68,7 +68,7 @@ function initStars() {
     }
 }
 
-// Обратный отсчёт до 2026 года
+// Обратный отсчёт до 1 января 2026 года
 function initCountdown() {
     updateCountdown();
     setInterval(updateCountdown, 1000);
@@ -76,8 +76,8 @@ function initCountdown() {
 
 function updateCountdown() {
     const now = new Date();
-    const nextYear = 2026;
-    const newYear = new Date(`January 1, ${nextYear} 00:00:00`);
+    // Устанавливаем целевой датой 1 января 2026 года, 00:00:00
+    const newYear = new Date('January 1, 2026 00:00:00');
     const diff = newYear - now;
     
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
