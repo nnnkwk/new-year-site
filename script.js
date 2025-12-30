@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Инициализация всех компонентов
     initSnowflakes();
     initStars();
-    initCountdown();
     initMobileOptimization();
     initGiftSystem(); // Новая функция для подарка
     
