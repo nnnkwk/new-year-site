@@ -68,35 +68,6 @@ function initStars() {
     }
 }
 
-// Обратный отсчёт до 1 января 2026 года
-function initCountdown() {
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-}
-
-function updateCountdown() {
-    const now = new Date();
-    // Устанавливаем целевой датой 1 января 2026 года, 00:00:00
-    const newYear = new Date('January 1, 2026 00:00:00');
-    const diff = newYear - now;
-    
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
-    // Безопасное обновление элементов
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
-    
-    if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
-    if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
-    if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
-    if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
-}
-
 // Система подарка с паролем
 function initGiftSystem() {
     const giftBtn = document.getElementById('open-gift-btn');
